@@ -1,10 +1,11 @@
 package test.me.srikanthkanuri.beginner;
 
 import static org.junit.Assert.*;
+import org.junit.Test;
 import java.util.Arrays;
 
 import me.srikanthkanuri.beginner.InsertionSort;
-import org.junit.Test;
+import me.srikanthkanuri.beginner.MergeSort;
 import me.srikanthkanuri.beginner.BubbleSort;
 import me.srikanthkanuri.beginner.SelectionSort;
 
@@ -31,5 +32,16 @@ public class SortingTest {
         InsertionSort is = new InsertionSort();
         assertEquals(Arrays.toString(ex1), Arrays.toString(is.sort(test1)));
         assertEquals(Arrays.toString(ex2), Arrays.toString(is.sort(test2)));
+    }
+    
+    @Test
+    public void testMergeSort() {
+        MergeSort ms = new MergeSort();
+        int[] cpTest1 = test1;
+        int[] cpTest2 = test2;
+        ms.sort(cpTest1, 0 , cpTest1.length);
+        assertEquals(Arrays.toString(ex1), Arrays.toString(cpTest1));
+        ms.sort(cpTest2, 0 , cpTest2.length);
+        assertEquals(Arrays.toString(ex2), Arrays.toString(cpTest2));
     }
 }
